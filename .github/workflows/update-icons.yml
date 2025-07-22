@@ -29,6 +29,6 @@ jobs:
         with:
           github-token: ${{ secrets.GH_TOKEN }}
           push-branch: main
-          commit-message: "Update README.md by Github Actions"
+          commit-message: "chore(icons): auto-update from Figma"
           name: github-actions[bot]
           email: 41898282+github-actions[bot]@users.noreply.github.com
