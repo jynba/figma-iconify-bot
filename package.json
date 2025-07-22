@@ -1,0 +1,19 @@
+{
+  "name": "@iconify-json/custom-icons",
+  "version": "1.0.0",
+  "main": "icons.json",
+  "type": "module",
+  "scripts": {
+    "fetch": "npx figma-export use-config figma.config.js",
+    "build": "node build-iconify.js",
+    "release": "cd json && npm publish --access public"
+  },
+  "devDependencies": {
+    "@figma-export/cli": "^6.2.2",
+    "@figma-export/output-components-as-svg": "^6.2.2",
+    "@figma-export/output-styles-as-sass": "^6.2.2",
+    "@figma-export/transform-svg-with-svgo": "^6.2.2",
+    "@figma-export/types": "^6.2.2",
+    "@iconify/tools": "^4.1.2"
+  }
+}

@@ -1,0 +1,42 @@
+name: Update Icons
+
+on:
+  repository_dispatch:
+  workflow_dispatch:
+
+jobs:
+  build-icons:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+          registry-url: "https://registry.npmjs.org"
+
+      - name: Install deps
+        run: npm ci
+
+      - name: Fetch icons from Figma
+        env:
+          FIGMA_TOKEN: ${{ secrets.FIGMA_TOKEN }}
+        run: npm run fetch
+
+      - name: Build Iconify JSON
+        run: npm run build
+
+      - name: Commit changes
+        run: |
+          git config user.name "IconBot"
+          git config user.email "icon-bot@example.com"
+          git add .
+          git commit -m "chore(icons): auto-update from Figma" || echo "No changes"
+          git push origin main
+
+      - name: Publish to npm
+        if: success()
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: npm run release
