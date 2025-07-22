@@ -1,7 +1,7 @@
 {
 	"name": "jy-icons",
 	"description": "custom icon set in Iconify JSON format",
-	"version": "1.0.1",
+	"version": "1.0.2",
 	"main": "index.js",
 	"module": "index.mjs",
 	"types": "index.d.ts",
