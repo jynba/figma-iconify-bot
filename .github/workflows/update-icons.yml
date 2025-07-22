@@ -24,14 +24,6 @@ jobs:
       - name: Build Iconify JSON
         run: pnpm install && pnpm run build
 
-      - name: Commit changes
-        run: |
-          git config user.name "IconBot"
-          git config user.email "icon-bot@example.com"
-          git add .
-          git commit -m "chore(icons): auto-update from Figma"
-          git push origin main
-
       - name: Publish to npm
         if: success()
         env:
