@@ -15,17 +15,17 @@ jobs:
           registry-url: "https://registry.npmjs.org"
       - run: npm i pnpm -g
       - run: pnpm install
-
-      - name: Fetch icons from Figma
         env:
           FIGMA_TOKEN: ${{ secrets.FIGMA_TOKEN }}
         run: pnpm run fetch
-
-      - name: Build Iconify JSON
-        run: pnpm install && pnpm run build
-
-      - name: Publish to npm
         run: |
           cd json
           npm version patch --no-git-tag-version
           npm publish --access public
+        uses: github-actions-x/commit@v2.9
+        with:
+          github-token: ${{ secrets.GH_TOKEN }}
+          push-branch: main
+          commit-message: 'Update README.md by Github Actions'
+          name: github-actions[bot]
+          email: 41898282+github-actions[bot]@users.noreply.github.com
