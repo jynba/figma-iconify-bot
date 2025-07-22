@@ -24,12 +24,8 @@ jobs:
       - name: Build Iconify JSON
         run: pnpm install && pnpm run build
 
-      - name: Bump version
-        working-directory: ./json
-        run: npm version patch --no-git-tag-version
-
       - name: Publish to npm
-        working-directory: ./json
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-        run: npm publish --access public
+        run: |
+          cd json
+          npm version patch --no-git-tag-version
+          npm publish --access public
