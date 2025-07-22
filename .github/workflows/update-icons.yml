@@ -27,7 +27,7 @@ jobs:
       - name: Push
         uses: github-actions-x/commit@v2.9
         with:
-          github-token: ${{ secrets.ACTION_TOKEN }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
           push-branch: main
           commit-message: "chore(icons): auto-update from Figma"
           name: github-actions[bot]
