@@ -22,15 +22,16 @@ jobs:
         run: pnpm run fetch
 
       - name: Build Iconify JSON
-        run: pnpm run build
+        run: pnpm install && pnpm run build
 
-      - name: Commit changes
-        run: |
-          git config user.name "IconBot"
-          git config user.email "icon-bot@example.com"
-          git add .
-          git commit -m "chore(icons): auto-update from Figma" || echo "No changes"
-          git push origin main
+      - name: Push
+        uses: github-actions-x/commit@v2.9
+        with:
+          github-token: ${{ secrets.GH_TOKEN }}
+          push-branch: main
+          commit-message: "chore(icons): auto-update from Figma"
+          name: github-actions[bot]
+          email: 41898282+github-actions[bot]@users.noreply.github.com
 
       - name: Publish to npm
         if: success()
