@@ -17,15 +17,18 @@ jobs:
       - run: pnpm install
         env:
           FIGMA_TOKEN: ${{ secrets.FIGMA_TOKEN }}
-        run: pnpm run fetch
-        run: |
+      - run: pnpm run fetch
+      - run: |
           cd json
           npm version patch --no-git-tag-version
+          echo "//registry.npmjs.org/:_authToken=${{ secrets.NODE_AUTH_TOKEN }}" > ~/.npmrc
           npm publish --access public
-        uses: github-actions-x/commit@v2.9
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+      - uses: github-actions-x/commit@v2.9
         with:
           github-token: ${{ secrets.GH_TOKEN }}
           push-branch: main
-          commit-message: 'Update README.md by Github Actions'
+          commit-message: "Update README.md by Github Actions"
           name: github-actions[bot]
           email: 41898282+github-actions[bot]@users.noreply.github.com
