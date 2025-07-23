@@ -1,7 +1,6 @@
-name: Update Icons
+name: main
 
 on:
-  repository_dispatch:
   workflow_dispatch:
 
 jobs:
