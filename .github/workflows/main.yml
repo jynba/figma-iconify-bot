@@ -2,7 +2,15 @@ name: main
 
 on:
   workflow_dispatch:
-
+    inputs:
+      message:
+        description: "message"
+        required: true
+        type: string
+      version:
+        description: "version"
+        required: true
+        type: string
 jobs:
   build-icons:
     runs-on: ubuntu-latest
@@ -28,6 +36,6 @@ jobs:
         with:
           github-token: ${{ secrets.GH_TOKEN }}
           push-branch: main
-          commit-message: "chore(icons): auto-update from Figma"
+          commit-message: "chore(icons): ${{ inputs.message }} ${{ inputs.version }} (auto-update)"
           name: github-actions[bot]
           email: 41898282+github-actions[bot]@users.noreply.github.com
