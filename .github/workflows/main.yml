@@ -25,6 +25,7 @@ jobs:
         env:
           FIGMA_TOKEN: ${{ secrets.FIGMA_TOKEN }}
       - run: pnpm run fetch
+      - run: pnpm run build
       - run: |
           cd json
           npm version patch --no-git-tag-version
