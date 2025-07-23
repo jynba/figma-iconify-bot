@@ -31,7 +31,7 @@ jobs:
           cd json
           npm version patch --no-git-tag-version
           echo "//registry.npmjs.org/:_authToken=${{ secrets.NODE_AUTH_TOKEN }}" > ~/.npmrc
-          npm publish --access public
+          npm publish --access public --tag latest
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
       - uses: github-actions-x/commit@v2.9
