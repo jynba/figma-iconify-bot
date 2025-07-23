@@ -6,7 +6,7 @@ import transformSvgWithSvgo from '@figma-export/transform-svg-with-svgo'
 
 /** @type { import('@figma-export/types').StylesCommandOptions } */
 const styleOptions = {
-  fileId: 'fzYhvQpqwhZDUImRz431Qo',
+  fileId: process.env.FILE_ID || '',
   // version: 'xxx123456', // optional - file's version history is only supported on paid Figma plans
   // ids: ['138:52'], // optional - Export only specified node IDs (the `onlyFromPages` option is always ignored when set)
   // onlyFromPages: ['icons'], // optional - Figma page names or IDs (all pages when not specified)
@@ -19,10 +19,10 @@ const styleOptions = {
 
 /** @type { import('@figma-export/types').ComponentsCommandOptions } */
 const componentOptions = {
-  fileId: 'fzYhvQpqwhZDUImRz431Qo',
+  fileId: process.env.FILE_ID || '',
   // version: 'xxx123456', // optional - file's version history is only supported on paid Figma plans
   // ids: ['54:22'], // optional - Export only specified node IDs (the `onlyFromPages` option is always ignored when set)
-  onlyFromPages: ['icons'],
+  // onlyFromPages: ['icons'],
   transformers: [
     transformSvgWithSvgo({
       plugins: [

@@ -24,6 +24,7 @@ jobs:
       - run: pnpm install
         env:
           FIGMA_TOKEN: ${{ secrets.FIGMA_TOKEN }}
+          FILE_ID: ${{ secrets.FILE_ID }}
       - run: pnpm run fetch
       - run: pnpm run build
       - run: |
