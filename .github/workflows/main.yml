@@ -22,6 +22,7 @@ jobs:
           registry-url: "https://registry.npmjs.org"
       - run: npm i pnpm -g
       - run: pnpm install
+      - run: sudo rm -rf output
       - run: pnpm run fetch
         env:
           FIGMA_TOKEN: ${{ secrets.FIGMA_TOKEN }}

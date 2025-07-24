@@ -19,7 +19,7 @@ function bumpVersion() {
 async function build() {
   const version = bumpVersion();
 
-  const iconSet = await importDirectory('./output/icons', {
+  const iconSet = await importDirectory('./output', {
     prefix: 'custom',
   });
 
