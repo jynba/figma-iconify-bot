@@ -6,7 +6,7 @@
   "scripts": {
     "fetch": "npx figma-export use-config figma.config.js",
     "build": "node build-iconify.js",
-    "release": "cd json && npm version patch --no-git-tag-version && npm publish --access public"
+    "release": "cd json && npm publish --access public"
   },
   "devDependencies": {
     "@figma-export/cli": "^6.2.2",

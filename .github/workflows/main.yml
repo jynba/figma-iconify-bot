@@ -30,7 +30,6 @@ jobs:
       - run: pnpm run build
       - run: |
           cd json
-          npm version patch --no-git-tag-version
           echo "//registry.npmjs.org/:_authToken=${{ secrets.NODE_AUTH_TOKEN }}" > ~/.npmrc
           npm publish --access public --tag latest
         env:
