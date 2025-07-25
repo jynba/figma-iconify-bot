@@ -27,6 +27,10 @@ figma-iconify-bot/
 - Node.js 16+
 - Figma access token（需有 Figma 文件读取权限）
 
+### 通过 Figma 插件触发工作流
+
+你可以使用 [Continuous Design - Run CI from Figma](https://www.figma.com/community/plugin/977948326423807703/continuous-design-run-ci-from-figma) 插件，在 Figma 内直接触发本项目的自动化流程（如导出、构建、发布等），实现设计到代码的持续集成。
+
 ## 安装依赖
 
 ```bash
