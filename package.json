@@ -1,12 +1,11 @@
 {
-  "name": "@iconify-json/custom-icons",
+  "name": "@mot-iron",
   "version": "1.0.0",
-  "main": "icons.json",
   "type": "module",
   "scripts": {
     "fetch": "npx figma-export use-config figma.config.js",
     "build": "node build-iconify.js",
-    "release": "cd json && npm publish --access public"
+    "release": "cd json && npm publish --access public && cd ../svg && npm publish --access public && cd ../vue && npm publish --access public"
   },
   "devDependencies": {
     "@figma-export/cli": "^6.2.2",

@@ -1,0 +1,17 @@
+# 源码文件
+src/
+build/
+
+# 开发依赖
+node_modules/
+*.log
+
+# 配置文件
+tsconfig.json
+tsconfig.build.json
+.gitignore
+
+# 其他
+*.md
+!README.md
+

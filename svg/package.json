@@ -1,0 +1,13 @@
+{
+	"name": "@mot-iron/iconify-svg",
+	"description": "custom icon set in SVG format",
+	"version": "1.0.2",
+	"files": [
+		"*.svg"
+	],
+	"keywords": [
+		"icon",
+		"svg",
+		"custom"
+	]
+}

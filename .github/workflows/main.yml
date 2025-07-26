@@ -22,6 +22,7 @@ jobs:
           registry-url: "https://registry.npmjs.org"
       - run: npm i pnpm -g
       - run: pnpm install
+      - run: cd vue && pnpm install
       - run: sudo rm -rf output
       - run: pnpm run fetch
         env:
@@ -30,6 +31,18 @@ jobs:
       - run: pnpm run build
       - run: |
           cd json
+          echo "//registry.npmjs.org/:_authToken=${{ secrets.NODE_AUTH_TOKEN }}" > ~/.npmrc
+          npm publish --access public --tag latest
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+      - run: |
+          cd svg
+          echo "//registry.npmjs.org/:_authToken=${{ secrets.NODE_AUTH_TOKEN }}" > ~/.npmrc
+          npm publish --access public --tag latest
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+      - run: |
+          cd vue
           echo "//registry.npmjs.org/:_authToken=${{ secrets.NODE_AUTH_TOKEN }}" > ~/.npmrc
           npm publish --access public --tag latest
         env:
