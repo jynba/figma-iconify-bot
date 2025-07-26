@@ -1,7 +1,7 @@
 {
 	"name": "@mot-iron/iconify-json",
 	"description": "custom icon set in Iconify JSON format",
-	"version": "1.0.11",
+	"version": "1.0.12",
 	"main": "index.js",
 	"module": "index.mjs",
 	"types": "index.d.ts",
