@@ -2,7 +2,7 @@
   "name": "@mot-iron/iconify-vue",
   "description": "custom icon set in Vue component format",
   "type": "module",
-  "version": "1.0.1",
+  "version": "1.0.11",
   "keywords": [
     "icon",
     "svg",
