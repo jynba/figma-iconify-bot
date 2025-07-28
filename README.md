@@ -68,7 +68,7 @@ pnpm install
 ### 2. 导出 Figma 图标
 
 ```bash
-npm run fetch
+pnpm run fetch
 ```
 
 - 该命令会根据 `figma.config.js` 配置，导出 Figma 文件中的 SVG 到 `output/` 目录。
@@ -77,7 +77,7 @@ npm run fetch
 ### 3. 构建 Iconify JSON 包
 
 ```bash
-npm run build
+pnpm run build
 ```
 
 - 处理 `output` 下的 SVG，生成 `json/` `svg/` `vue/` 目录下的 npm 包。
@@ -86,7 +86,7 @@ npm run build
 ### 4. 发布 npm 包
 
 ```bash
-npm run release
+pnpm run release
 ```
 
 - 发布所有生成的 npm 包到 npm registry：
