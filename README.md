@@ -121,3 +121,11 @@ npm run release
 
 - [@figma-export/cli](https://github.com/marcomontalbano/figma-export)
 - [@iconify/tools](https://iconify.design/docs/libraries/tools/)
+
+# icon-demo-app
+
+演示如何在 Vue 3 项目中使用 `@mot-iron/iconify-vue` 图标组件，配置按需导入和自动组件解析。
+
+[仓库地址](https://github.com/jynba/icon-demo-app)
+
+[演示地址](https://jynba.github.io/icon-demo-app/)
