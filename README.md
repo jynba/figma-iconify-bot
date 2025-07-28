@@ -4,7 +4,7 @@
 
 ## 功能简介
 
-- 通过 Figma 插件[Continuous Design - Run CI from Figma](https://www.figma.com/community/plugin/977948326423807703/continuous-design-run-ci-from-figma) 插件触发工作流，在 Figma 内直接触发本项目的自动化流程（如导出、构建、发布等），实现设计到代码的持续集成
+- 通过 Figma 插件[Continuous Design - Run CI from Figma](https://www.figma.com/community/plugin/977948326423807703/continuous-design-run-ci-from-figma) 触发工作流，在 Figma 内直接触发本项目的自动化流程（如导出、构建、发布等），实现设计到代码的持续集成
 - 使用 [figma-export](https://github.com/marcomontalbano/figma-export) 从 Figma 文件导出 SVG 图标
 - 使用 [@iconify/tools](https://iconify.design/docs/libraries/tools/) 处理 SVG 并生成 Iconify JSON 格式
 - 参考 [@element-plus/icons-vue](https://www.npmjs.com/package/@element-plus/icons-vue)处理并生成 Vue component 格式
